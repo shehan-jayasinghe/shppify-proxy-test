@@ -1,13 +1,14 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "b1c98791a50b100a9c11cbc9c9c523a5"
-application_url = "https://example.com/"
+application_url = "https://badge-assessing-customers-year.trycloudflare.com"
 embedded = true
 name = "shppify-proxy-test"
 handle = "shppify-proxy-test"
 
 [build]
 include_config_on_deploy = true
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-01"
@@ -25,7 +26,11 @@ api_version = "2025-01"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://badge-assessing-customers-year.trycloudflare.com/auth/callback",
+  "https://badge-assessing-customers-year.trycloudflare.com/auth/shopify/callback",
+  "https://badge-assessing-customers-year.trycloudflare.com/api/auth/callback"
+]
 
 [pos]
 embedded = false
